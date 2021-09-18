@@ -2,15 +2,15 @@
 
 # rsync-backup-archive
 
-Easiest way to backup files using `rsync`.
+The easiest way to backup files using `rsync`.
 
 ## 👨‍💻 Motivation
 
-I needed a simple way to backup my own personal servers. Doesn't exist something critical that must have the best resiliance or something like that there.
+I needed a simple way to back up my own personal servers. Doesn't exist something critical there that must have the best resilience or something like that.
 
 I wanted a way to have copies of my files in case of some server blow up and if I have a simple way to do that, it's even better.
 
-> 🔴 You should not use this kind of solution for critical production environment! Choose some cloud provider, like AWS, GCP, or Azure, and user their snapshot/backup solutions instead.
+> 🔴 You should not use this kind of solution for a critical production environment! Choose some cloud provider, like AWS, GCP, or Azure, and use their snapshot/backup solutions instead.
 > This is for hobby projects and personal use-cases.
 
 ## 🚢 How to use
@@ -34,7 +34,7 @@ docker run -it \
 ### 🛠 Environment variables
 
 - `LOCAL_OUTPUT_DIR`: [default: /output] local container directory to store the backup files.
-- `REMOTE_SSH_HOST`: [default: localhost] [**required**] remote server domain or ip address.
+- `REMOTE_SSH_HOST`: [default: localhost] `[required]` remote server domain or ip address.
 - `REMOTE_INPUT_DIR`: [default: /input] remote directory to copy files from.
 - `REMOTE_SSH_USER`: [default: root] remote ssh server username.
 - `REMOTE_SSH_PORT`: [default: 22] remote ssh server port
@@ -78,7 +78,7 @@ services:
 
       # Pass the local output directory to the container
       # this is the directory where the backup files will be stored.
-      # If you not define this, all the files will be lost 
+      # If you do not define this, all the files will be lost 
       # after the container exits
       - "~/backup/my-server-com:/output:rw"
 ```
