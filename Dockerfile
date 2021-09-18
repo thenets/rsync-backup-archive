@@ -10,12 +10,10 @@ ENV REMOTE_SSH_EXTRA_OPTS ""
 ENV REMOTE_RSYNC_EXTRA_OPTS ""
 ENV REMOTE_RSYNC_INTERVAL_SECONDS 0
 
-RUN set -x \
-    && apk add openssh-client nano htop bash rsync
-
 ADD entrypoint.sh /
 
 RUN set -x \
+    && apk add openssh-client rsync
     && chmod +x entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh"]
