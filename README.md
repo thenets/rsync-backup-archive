@@ -1,3 +1,5 @@
+[![Docker Repository on Quay](https://quay.io/repository/thenets/rsync-backup-archive/status "Docker Repository on Quay")](https://quay.io/repository/thenets/rsync-backup-archive)
+
 # rsync-backup-archive
 
 Easiest way to backup files using `rsync`.
