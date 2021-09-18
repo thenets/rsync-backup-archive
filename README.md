@@ -10,6 +10,9 @@ I needed a simple way to back up my own personal servers. Doesn't exist somethin
 
 I wanted a way to have copies of my files in case of some server blow up and if I have a simple way to do that, it's even better.
 
+You can check my blog post to learn more about the `rsync` command that this project uses and how it works:
+- [Using rsync to backup Linux servers](https://blog.thenets.org/using-rsync-to-backup-linux-servers/)
+
 > 🔴 You should not use this kind of solution for a critical production environment! Choose some cloud provider, like AWS, GCP, or Azure, and use their snapshot/backup solutions instead.
 > This is for hobby projects and personal use-cases.
 
