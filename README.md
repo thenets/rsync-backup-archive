@@ -34,6 +34,7 @@ docker run -it \
     -e REMOTE_SSH_EXTRA_OPTS="-o StrictHostKeyChecking=no" \
     -e REMOTE_SSH_HOST="my-server.com" \
     -e REMOTE_RSYNC_INTERVAL_SECONDS="3600" \
+    -v  "~/.ssh:/secrets:ro" \
     -v "~/backup/my-server-com:/output:rw" \
     quay.io/thenets/rsync-backup-archive:latest
 ```
