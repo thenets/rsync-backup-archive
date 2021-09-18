@@ -68,17 +68,17 @@ services:
 
     environment:
       # Probably you want to skip the public key check
-      - REMOTE_SSH_EXTRA_OPTS="-o StrictHostKeyChecking=no"
+      - "REMOTE_SSH_EXTRA_OPTS=-o StrictHostKeyChecking=no"
 
       # Remote host domain or IP address
-      - REMOTE_SSH_HOST="my-server.com"
+      - "REMOTE_SSH_HOST=my-server.com"
 
       # Remote directory to backup
-      - REMOTE_INPUT_DIR="/opt/my_data"
+      - "REMOTE_INPUT_DIR=/opt/my_data"
 
       # This makes this container never exit
       # unless some error occurs
-      - REMOTE_RSYNC_INTERVAL_SECONDS="3600"
+      - "REMOTE_RSYNC_INTERVAL_SECONDS=3600"
     volumes:
       # Pass the host user ssh key to the container
       - "~/.ssh:/secrets:ro"
