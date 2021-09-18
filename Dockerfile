@@ -13,7 +13,7 @@ ENV REMOTE_RSYNC_INTERVAL_SECONDS 0
 ADD entrypoint.sh /
 
 RUN set -x \
-    && apk add openssh-client rsync
+    && apk add openssh-client rsync \
     && chmod +x entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh"]
