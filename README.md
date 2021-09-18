@@ -17,6 +17,9 @@ I wanted a way to have copies of my files in case of some server blow up and if 
 
 Choose the environment variables that you need and mount the volume where you want to store the backups.
 
+Container image:
+- `quay.io/thenets/rsync-backup-archive:latest`
+
 Example:
 
 > 💡 Check the `docker-compose.yml` example below for more details and how to use it.
@@ -28,7 +31,8 @@ docker run -it \
     -e REMOTE_SSH_EXTRA_OPTS="-o StrictHostKeyChecking=no" \
     -e REMOTE_SSH_HOST="my-server.com" \
     -e REMOTE_RSYNC_INTERVAL_SECONDS="3600" \
-    -v "~/backup/my-server-com:/output:rw"
+    -v "~/backup/my-server-com:/output:rw" \
+    quay.io/thenets/rsync-backup-archive:latest
 ```
 
 ### 🛠 Environment variables
@@ -50,7 +54,7 @@ docker run -it \
 version: "3.3"
 services:
   my-rsync-backup:
-    build: .
+    image: quay.io/thenets/rsync-backup-archive:latest
 
     # Container name
     container_name: "my-rsync-backup"
